@@ -1,0 +1,24 @@
+/*
+This is a sample file explaining the format of your code. Do not make any changes to the file.
+Author : <Sunaina>
+College : <Guru Nanak Dev Engineering College>
+Year/Department : <3rd Year>/<cse Department>
+E-Mail Id : <sapnamahey2000@gmail.com>
+
+Insert Your Code Here
+*/
+OUT = 0
+IN = 1
+def countWords(string): 
+	state = OUT 
+	wc = 0
+	for i in range(len(string)):  
+		if (string[i] == ' ' or string[i] == '\n' or
+			string[i] == '\t'): 
+			state = OUT 
+		elif state == OUT: 
+			state = IN 
+			wc += 1
+	return wc
+string = input("enter your words ")
+print("No. of words : " + str(countWords(string))) 
